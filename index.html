@@ -1,585 +1,665 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium_chocolate_13</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-main: #6a1f2c;   /* Бордовый цвет */
-            --text-dark: #2c1e16;
-            --gold: #c5a059;
-            --gold-light: #e8d3a7;
-        }
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=114350048', 'ym');
+    ym(114350048, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/114350048" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Premium Chocolate — Новогодняя коллекция</title>
+<meta name="description" content="Изготовление конфет ручной работы из бельгийского шоколада. Клубника в шоколаде, ягоды и фрукты в шоколаде. Мастер-классы.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink: #f8f1f2;         /* Основной светлый текст */
+  --muted: #d6b5be;       /* Пыльно-розовый для второстепенного текста */
+  --gold: #e7c98b;        /* Золотой акцент */
+  --ice: #f0d5dd;         /* Светлый акцент для ссылок */
+  --hdr: 58px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--hdr)}
+body{
+  font-family:'Manrope',system-ui,sans-serif;
+  /* Глубокий бордовый градиент */
+  background: linear-gradient(180deg, #5e1a2f 0%, #3b0f1c 40%, #14040a 100%);
+  background-attachment:fixed;
+  color:var(--ink);
+  overflow-x:hidden;
+}
+h1,h2,h3,.serif{font-family:'Playfair Display',Georgia,serif;font-weight:500}
+section{position:relative;padding:90px 6vw;z-index:2}
+a{color:inherit}
+#snow{position:fixed;inset:0;pointer-events:none;z-index:6}
+.stars{position:fixed;inset:0;pointer-events:none;z-index:1}
+.star{position:absolute;background:#fff;border-radius:50%;opacity:.5;animation:tw 3s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.25}50%{opacity:.9}}
+[hidden]{display:none!important}
+[data-ic]{display:inline-flex;align-items:center;justify-content:center}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* header */
+.hdr{position:fixed;top:0;left:0;right:0;height:var(--hdr);z-index:30;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 max(4vw,14px);background:rgba(30, 5, 12, 0.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(231,201,139,.3)}
+.hdr .logo{font-family:'Playfair Display',serif;font-size:20px;text-decoration:none;white-space:nowrap}
+.hdr .logo i{color:var(--gold)}
+.hnav{display:flex;align-items:center;gap:15px;font-size:12.5px}
+.hnav a{text-decoration:none;color:var(--ice);opacity:.9;transition:.2s;white-space:nowrap}
+.hnav a:hover{color:var(--gold);opacity:1}
+.hnav-text,.social-icons{display:flex;align-items:center;gap:13px}
+.social-icons{gap:7px}
+.hnav .ic{display:inline-flex;align-items:center;justify-content:center;width:29px;height:29px;border-radius:50%;border:1px solid rgba(231,201,139,.3)}
+.hnav .ic svg,.chip svg{width:19px;height:19px;display:block;flex:none}
+.phone-link{font-size:12px;color:var(--ice)}
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-main);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
+/* hero */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding-top:calc(var(--hdr) + 40px)}
+.hero-ico{font-size:22px;letter-spacing:14px;color:var(--gold);opacity:.9}
+.hero h1{font-size:clamp(48px,8vw,110px);line-height:1.05;margin:18px 0 6px;background:linear-gradient(180deg,#fff 20%,#e7c98b 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero h2{font-size:clamp(30px,4.6vw,58px);letter-spacing:.02em;color:var(--ink)}
+.hero p.lead{margin-top:26px;color:var(--muted);font-size:16px;letter-spacing:.05em;max-width:800px;line-height:1.7;font-weight:300}
+.scroll-cue{margin-top:52px;font-size:13px;letter-spacing:.35em;color:var(--gold);text-transform:uppercase;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+.dots{position:fixed;right:22px;top:50%;transform:translateY(-50%);z-index:20;display:flex;flex-direction:column;gap:14px}
+.dots a{width:9px;height:9px;border-radius:50%;border:1.5px solid rgba(231,201,139,.5);display:block;transition:.3s}
+.dots a.on{background:var(--gold);border-color:var(--gold);box-shadow:0 0 10px rgba(231,201,139,.8)}
+.kicker{display:block;text-align:center;color:var(--gold);font-size:12px;letter-spacing:.4em;text-transform:uppercase;margin-bottom:14px}
+.h2c{font-size:clamp(34px,4.5vw,54px);text-align:center;margin-bottom:14px;color:var(--ink)}
+.sub{text-align:center;color:var(--muted);max-width:620px;margin:0 auto 36px;line-height:1.7;font-weight:300}
 
-        h1, h2, h3 {
-            font-family: 'Cormorant Garamond', serif;
-        }
+/* Фильтры */
+.filters{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-bottom:40px}
+.filter-btn{background:transparent;border:1px solid var(--gold);color:var(--gold);padding:10px 25px;font-family:'Manrope',sans-serif;font-size:13px;cursor:pointer;transition:all .3s ease;text-transform:uppercase;letter-spacing:1px;border-radius:30px}
+.filter-btn:hover,.filter-btn.active{background:linear-gradient(135deg,#e7c98b,#c89b4f);color:#14040a;border-color:transparent;font-weight:600}
 
-        /* Главный экран (Hero) */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            background-image: url('main-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 20px;
-        }
+/* Сетка */
+.grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:30px;width:100%;max-width:1200px;margin:0 auto}
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(20, 14, 10, 0.6);
-        }
+/* Карточка */
+.card{background:rgba(90, 20, 40, 0.4);border:1px solid rgba(231,201,139,.25);border-radius:18px;overflow:hidden;backdrop-filter:blur(6px);display:flex;flex-direction:column;padding:20px;transition:.35s}
+.card:hover{border-color:rgba(231,201,139,.6);box-shadow:0 24px 50px rgba(0,0,0,.6);background:rgba(100, 25, 45, 0.5)}
+.card-img-container{position:relative;width:100%;aspect-ratio:1/1;border-radius:12px;overflow:hidden;background:rgba(0,0,0,.3);margin-bottom:15px}
+.card-img-container img{width:100%;height:100%;object-fit:cover}
+.thumbs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin-bottom:20px;padding-bottom:5px}
+.thumbs::-webkit-scrollbar{display:none}
+.thumb{width:40px;height:40px;border-radius:6px;overflow:hidden;border:2px solid rgba(255,255,255,.2);cursor:pointer;flex:0 0 auto;padding:0;background:none;transition:.2s}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb.active,.thumb:hover{border-color:var(--gold)}
+.card-title{font-family:'Playfair Display',serif;font-size:20px;color:var(--gold);text-align:center;margin-bottom:15px;line-height:1.3;min-height:52px;display:flex;align-items:center;justify-content:center}
+.card-desc{font-size:13px;color:var(--muted);line-height:1.6;text-align:center;margin-bottom:15px;background:rgba(20, 4, 10, 0.4);padding:12px;border-radius:8px;flex-grow:1}
+.card-size{font-size:12px;color:var(--ice);text-align:center;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.card-price{font-family:'Playfair Display',serif;font-size:24px;color:var(--gold);text-align:center;margin-bottom:20px}
+.card-btn{background:linear-gradient(135deg,#e7c98b,#c89b4f);color:#14040a;font-weight:700;padding:12px 20px;border-radius:30px;text-align:center;text-decoration:none;transition:.25s;font-size:14px;display:block;letter-spacing:.5px}
+.card-btn:hover{filter:brightness(1.1);box-shadow:0 4px 15px rgba(231,201,139,.4)}
 
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
-            color: #fff;
-            padding: 20px;
-        }
+/* corporate */
+.corp-box{max-width:1140px;margin:0 auto;border:1px solid rgba(231,201,139,.3);border-radius:22px;background:linear-gradient(135deg,rgba(231,201,139,.08),rgba(90, 20, 40, 0.4));padding:48px 5vw}
+.corp-box .sub{margin-bottom:36px}
+.corp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.corp-grid div{border-left:2px solid var(--gold);padding:2px 0 2px 16px}
+.corp-grid b{display:block;font-family:'Playfair Display',serif;font-weight:500;font-size:18px;margin-bottom:6px;color:var(--ink)}
+.corp-grid p{color:var(--muted);font-size:14px;line-height:1.6}
 
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 600;
-            margin-bottom: 25px;
-            color: var(--gold-light);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
+/* contacts */
+.cta{text-align:center}
+.cta p.sub{margin-bottom:36px}
+.hours{margin-top:22px;color:var(--muted);font-size:14px}
+.stack{max-width:1140px;margin:0 auto;display:grid;gap:34px}
+.stack .corp-box{margin:0;width:100%}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.chip{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-size:15px;padding:11px 20px;border:1px solid rgba(231,201,139,.4);border-radius:40px;background:rgba(90, 20, 40, 0.4);transition:.25s}
+.chip:hover{border-color:var(--gold);background:rgba(231,201,139,.15);color:var(--gold)}
+.cta .corp-grid{text-align:left}
 
-        .hero p {
-            font-size: 1.15rem;
-            font-weight: 300;
-            line-height: 1.9;
-            letter-spacing: 0.5px;
-            margin-bottom: 40px;
-        }
+footer{border-top:1px solid rgba(231,201,139,.15);padding:30px 6vw;text-align:center;color:#a67a86;font-size:13px;position:relative;z-index:2;line-height:1.9}
+footer a{color:var(--ice);text-decoration:none}
+footer a:hover{color:var(--gold)}
+.reveal{opacity:0;transform:translateY(26px);transition:.8s ease}
+.reveal.in{opacity:1;transform:none}
 
-        /* Категории */
-        .categories {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .category-btn {
-            background: transparent;
-            border: 1px solid var(--gold-light);
-            color: var(--gold-light);
-            padding: 15px 35px;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            font-family: 'Montserrat', sans-serif;
-            border-radius: 2px;
-        }
-
-        .category-btn.active, .category-btn:hover {
-            background: var(--gold-light);
-            color: var(--text-dark);
-            border-color: var(--gold-light);
-        }
-
-        /* Сетка товаров */
-        .container {
-            max-width: 1300px;
-            margin: 80px auto;
-            padding: 0 20px;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 50px 40px;
-        }
-
-        .product-card {
-            background: transparent;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.4s ease;
-            animation: fadeIn 0.5s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .product-card:hover {
-            transform: translateY(-8px);
-        }
-
-        .img-wrapper {
-            width: 100%;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-
-        .product-img {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.7s ease;
-        }
-
-        .product-card:hover .product-img {
-            transform: scale(1.03);
-        }
-
-        /* Миниатюры (галерея набора) */
-        .thumbnails {
-            display: flex;
-            gap: 6px;
-            margin-top: 10px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .thumb {
-            width: 52px;
-            height: 52px;
-            object-fit: cover;
-            border-radius: 4px;
-            cursor: pointer;
-            border: 2px solid transparent;
-            transition: border-color 0.3s, transform 0.3s;
-            background: #eee;
-        }
-
-        .thumb:hover {
-            transform: translateY(-2px);
-        }
-
-        .thumb.active {
-            border-color: var(--gold);
-        }
-
-        .product-info {
-            padding: 25px 0 0 0;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            text-align: center;
-        }
-
-        /* ИЗМЕНЕНО: Яркое название набора */
-        .product-title {
-            font-size: 1.6rem;
-            margin-bottom: 12px;
-            color: var(--gold-light);
-            font-weight: 700;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
-        }
-
-        .product-desc {
-            font-size: 0.9rem;
-            color: #f0e6e0;
-            margin-bottom: 20px;
-            flex-grow: 1;
-            line-height: 1.6;
-            background: rgba(0,0,0,0.2);
-            padding: 8px;
-            border-radius: 6px;
-        }
-
-        .product-meta {
-            margin-bottom: 20px;
-        }
-
-        .product-count {
-            display: block;
-            color: var(--gold);
-            font-size: 0.85rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-        }
-
-        /* ИЗМЕНЕНО: Белая жирная цена */
-        .product-price {
-            display: block;
-            font-size: 1.8rem;
-            color: #ffffff;
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 700;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
-        }
-
-        .order-btn {
-            background: var(--text-dark);
-            color: var(--gold-light);
-            border: none;
-            padding: 15px;
-            width: 100%;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            font-family: 'Montserrat', sans-serif;
-            border-radius: 4px;
-        }
-
-        .order-btn:hover {
-            background: var(--gold);
-            color: #fff;
-        }
-
-        /* Модальное окно */
-        .modal-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(20, 14, 10, 0.85);
-            backdrop-filter: blur(8px);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .modal-overlay.active {
-            display: flex;
-            opacity: 1;
-        }
-
-        .modal {
-            background: #fff;
-            padding: 50px 40px;
-            border-radius: 8px;
-            max-width: 420px;
-            width: 90%;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
-            transform: translateY(20px);
-            transition: transform 0.3s ease;
-        }
-
-        .modal-overlay.active .modal {
-            transform: translateY(0);
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 2.5rem;
-            font-family: serif;
-            cursor: pointer;
-            color: #999;
-            transition: color 0.3s;
-            line-height: 1;
-        }
-
-        .close-modal:hover {
-            color: var(--text-dark);
-        }
-
-        .modal h3 {
-            margin-bottom: 10px;
-            font-size: 2rem;
-            color: var(--text-dark);
-        }
-
-        .modal-subtitle {
-            margin-bottom: 30px;
-            font-size: 0.95rem;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        .contact-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 16px;
-            margin-bottom: 15px;
-            border-radius: 4px;
-            text-decoration: none;
-            color: white;
-            font-weight: 500;
-            font-size: 1rem;
-            letter-spacing: 1px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .contact-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .btn-tg { background: linear-gradient(135deg, #2AABEE 0%, #229ED9 100%); }
-        .btn-inst { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-        .btn-phone { background: var(--text-dark); color: var(--gold-light); }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.8rem; }
-            .hero p { font-size: 1rem; }
-            .category-btn { padding: 12px 25px; width: 100%; margin-bottom: 10px;}
-            .categories { gap: 0; }
-        }
-    </style>
+/* Мобильная адаптация */
+@media(max-width:1024px){.grid{grid-template-columns:repeat(2, 1fr)}}
+@media(max-width:760px){
+ :root{--hdr:92px}
+ section{padding:64px 5vw}
+ .grid{grid-template-columns:1fr;gap:40px}
+ .dots{display:none}
+ .hdr{height:var(--hdr);padding:8px 14px;align-items:center;gap:8px}
+ .hdr .logo{font-size:18px}
+ .hnav{flex:1;display:flex;justify-content:flex-end;flex-wrap:wrap;gap:6px 9px}
+ .hnav-text{display:none}
+ .social-icons{gap:5px}
+ .hnav .ic{width:28px;height:28px}
+ .hnav .ic svg{width:17px;height:17px}
+ .phone-link{font-size:11px}
+ .hero{padding-top:calc(var(--hdr) + 28px)}
+ .hero p.lead{font-size:14px}
+}
+@media(max-width:390px){.hdr .logo{font-size:16px}.hnav{gap:5px}.phone-link{font-size:10px}}
+</style>
 </head>
 <body>
+<div class="stars" id="stars"></div>
+<canvas id="snow"></canvas>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Premium Chocolate</h1>
-            <p>Изготовление конфет ручной работы из бельгийского шоколада, клубника в шоколаде, ягоды и фрукты в шоколаде. Проведение мастер классов, а также индивидуального обучения по созданию клубники в шоколаде, ягод и фруктов в шоколаде. Возможен выезд в любой город для проведения мастер классов.</p>
-            
-            <div class="categories">
-                <button class="category-btn" data-category="sets">Наборы</button>
-                <button class="category-btn" data-category="strawberry">Клубника</button>
-                <button class="category-btn" data-category="candy">Конфеты</button>
-                <button class="category-btn" data-category="dates">Финики</button>
-            </div>
-        </div>
-    </header>
-
-    <div class="container">
-        <div class="product-grid" id="productGrid"></div>
+<header class="hdr">
+  <a class="logo" href="#top">Premium <i>Chocolate</i></a>
+  <nav class="hnav" aria-label="Контакты">
+    <div class="hnav-text">
+      <a class="txt" data-l="ig" target="_blank" rel="noopener">Instagram</a>
+      <a class="txt" data-l="tg" target="_blank" rel="noopener">Telegram</a>
+      <a class="txt" data-l="wa" target="_blank" rel="noopener">WhatsApp</a>
     </div>
-
-    <div class="modal-overlay" id="orderModal">
-        <div class="modal">
-            <span class="close-modal" id="closeModal">&times;</span>
-            <h3>Связь с мастером</h3>
-            <p class="modal-subtitle">Вы выбрали: <br><strong id="modalItemName" style="color: var(--gold); font-size: 1.2rem; display:block; margin-top:8px;"></strong><br>Напишите мне или позвоните, чтобы оформить заказ и обсудить детали!</p>
-            
-            <a href="https://t.me/Premium_chocolate_13" class="contact-btn btn-tg" target="_blank">Написать в Telegram</a>
-            <a href="https://www.instagram.com/k_moscow_13?utm_source=qr" class="contact-btn btn-inst" target="_blank">Перейти в Instagram</a>
-            <a href="tel:+79001313900" class="contact-btn btn-phone">8 (900) 131-39-00</a>
-        </div>
+    <div class="social-icons" aria-label="Социальные сети">
+      <a class="ic" data-l="ig" target="_blank" rel="noopener" aria-label="Instagram"><i data-ic="ig"></i></a>
+      <a class="ic" data-l="tg" target="_blank" rel="noopener" aria-label="Telegram"><i data-ic="tg"></i></a>
+      <a class="ic" data-l="wa" target="_blank" rel="noopener" aria-label="WhatsApp"><i data-ic="wa"></i></a>
     </div>
+    <a class="phone-link" data-l="phone">+7 (951) 501-05-09</a>
+  </nav>
+</header>
 
-    <script>
-        // =============================================================
-        //  КАТАЛОГ ТОВАРОВ
-        // =============================================================
-        const products = [
-            // ---------------- НАБОРЫ (новогодние) ----------------
-            {
-                id: 101, category: 'sets', name: 'Шоколадная ёлочка (Набор №1)',
-                desc: 'Шоколадная ёлочка из молочного бельгийского шоколада с начинкой солёной карамели с ёлочными игрушками из молочного шоколада с начинкой натурального мандарина.',
-                count: 'Набор', price: 2550,
-                images: ['Набор 1-1.jpg', 'Набор 1-2.jpg', 'Набор 1-3.jpg', 'Набор 1-4.jpg', 'Набор 1-5.jpg']
-            },
-            {
-                id: 102, category: 'sets', name: 'Шоколадная ёлочка (Набор №2)',
-                desc: 'Шоколадная ёлочка из молочного бельгийского шоколада с начинкой солёной карамели с ёлочными игрушками из молочного шоколада с начинкой ванили.',
-                count: 'Набор', price: 2550,
-                images: ['Набор 2-1.jpg', 'Набор 2-2.jpg', 'Набор 2-3.jpg', 'Набор 2-4.jpg', 'Набор 2-5.jpg', 'Набор 2-6.jpg']
-            },
-            {
-                id: 103, category: 'sets', name: 'Шоколадная ёлочка (Набор №3)',
-                desc: 'Шоколадная ёлочка из молочного бельгийского шоколада.',
-                count: 'Набор', price: 5500,
-                images: ['Набор 3-1.jpg', 'Набор 3-2.jpg', 'Набор 3-3.jpg', 'Набор 3-4.jpg', 'Набор 3-5.jpg', 'Набор 3-6.jpg']
-            },
-            {
-                id: 104, category: 'sets', name: 'Набор «Зимняя сказка» (№4)',
-                desc: 'Шоколадный набор «Зимняя сказка» из молочного бельгийского шоколада.',
-                count: 'Набор', price: 1550,
-                images: ['Набор 4-1.jpg', 'Набор 4-2.jpg', 'Набор 4-3.jpg', 'Набор 4-4.jpg', 'Набор 4-5.jpg', 'Набор 4-6.jpg', 'Набор 4-7.jpg']
-            },
-            {
-                id: 105, category: 'sets', name: 'Шоколадные орешки (Набор №5)',
-                desc: 'Набор из шоколадных орешков из молочного бельгийского шоколада с начинкой вяленой клюквы и грецким орехом.',
-                count: 'Набор', price: 1550,
-                images: ['Набор 5-1.jpg', 'Набор 5-2.jpg', 'Набор 5-3.jpg', 'Набор 5-4.jpg', 'Набор 5-5.jpg', 'Набор 5-6.jpg']
-            },
-            {
-                id: 106, category: 'sets', name: 'Плитка «Счастливого Рождества» (№6)',
-                desc: 'Шоколадная плитка «Счастливого Рождества» из молочного или тёмного бельгийского шоколада.',
-                count: 'Плитка', price: 1550,
-                images: ['Набор 6-1.jpg', 'Набор 6-2.jpg']
-            },
-            {
-                id: 107, category: 'sets', name: 'Плитка «С Новым годом» (№7)',
-                desc: 'Шоколадная плитка «С Новым годом» из молочного бельгийского шоколада.',
-                count: 'Плитка', price: 1550,
-                images: ['Набор 7-1.jpg', 'Набор 7-2.jpg']
-            },
-            {
-                id: 108, category: 'sets', name: 'Шоколадный набор (№8)',
-                desc: 'Шоколадный набор из молочного бельгийского шоколада.',
-                count: 'Набор', price: 650,
-                images: ['Набор 8-1.jpg', 'Набор 8-2.jpg', 'Набор 8-3.jpg', 'Набор 8-4.jpg', 'Набор 8-5.jpg']
-            },
-            {
-                id: 109, category: 'sets', name: 'Шоколадный набор (№9)',
-                desc: 'Шоколадный набор из молочного бельгийского шоколада.',
-                count: 'Набор', price: 650,
-                images: ['Набор 9-1.jpg', 'Набор 9-2.jpg', 'Набор 9-3.jpg', 'Набор 9-4.jpg']
-            },
-            {
-                id: 110, category: 'sets', name: 'Шоколадный набор (№10)',
-                desc: 'Шоколадный набор из молочного бельгийского шоколада.',
-                count: 'Набор', price: 650,
-                images: ['Набор 10-1.jpg', 'Набор 10-2.jpg', 'Набор 10-3.jpg', 'Набор 10-4.jpg']
-            },
-            {
-                id: 111, category: 'sets', name: 'Шоколадный набор (№11)',
-                desc: 'Шоколадный набор из молочного бельгийского шоколада.',
-                count: 'Набор', price: 650,
-                images: ['Набор 11-1.jpg', 'Набор 11-2.jpg', 'Набор 11-3.jpg', 'Набор 11-4.jpg', 'Набор 11-5.jpg']
-            },
-            {
-                id: 112, category: 'sets', name: 'Набор шоколадных орешков (№12)',
-                desc: 'Набор шоколадных орешков из молочного бельгийского шоколада.',
-                count: 'Набор', price: 1350,
-                images: ['Набор 12-1.jpg', 'Набор 12-2.jpg']
-            },
+<nav class="dots" id="dots">
+  <a href="#top" class="on" title="Главная"></a>
+  <a href="#catalog" title="Каталог"></a>
+  <a href="#corporate" title="Корпоративным клиентам"></a>
+  <a href="#contacts" title="Контакты и условия"></a>
+</nav>
 
-            // ---------------- КЛУБНИКА ----------------
-            { id: 1, category: 'strawberry', name: 'Набор классический (№1)', desc: 'Набор классический из клубники в шоколаде, украшенный сусальным золотом, в наборе 16 штук, цена - 3999₽', count: '16 штук (4x4)', price: 3999, img: 'клубника 1.jpg' },
-            { id: 2, category: 'strawberry', name: 'Премиальный набор (№2)', desc: 'Премиальный набор клубники в шоколаде, в наборе 24 штуки, украшенный голубикой и красной смородиной в сусальном золоте. Цена 7500₽', count: '24 штуки', price: 7500, img: 'клубника 2.jpg' },
-            { id: 3, category: 'strawberry', name: 'Набор классический (№3)', desc: 'Набор классический из клубники в шоколаде, украшенный сусальным золотом, в наборе 16 штук, цена - 3999₽', count: '16 штук', price: 3999, img: 'клубника 3.jpg' },
-            { id: 4, category: 'strawberry', name: 'Набор с декором (№4)', desc: 'Набор клубники в шоколаде с декором, в наборе 16 штук, цена - 4500₽', count: '16 штук', price: 4500, img: 'клубника 4.jpg' },
-            { id: 5, category: 'strawberry', name: 'Набор классический (№5)', desc: 'Набор классический из клубники в шоколаде, украшенный сусальным золотом, в наборе 16 штук, цена - 3999₽', count: '16 штук', price: 3999, img: 'клубника 5.jpg' },
-            { id: 6, category: 'strawberry', name: 'Бенто торт из клубники', desc: 'Бенто торт из клубники в шоколаде, украшенный сусальным золотом, в наборе 27 штук, цена - 7500₽', count: '27 штук', price: 7500, img: 'торт из клубники.jpg' },
+<section class="hero" id="top">
+  <div class="hero-ico">❄ ✦ ❄</div>
+  <h1>Premium Chocolate</h1>
+  <h2>Новогодняя коллекция</h2>
+  <p class="lead">Изготовление конфет ручной работы из бельгийского шоколада, клубника в шоколаде, ягоды и фрукты в шоколаде. Проведение мастер классов, а также индивидуального обучения по созданию клубники в шоколаде, ягод и фруктов в шоколаде. Возможен выезд в любой город для проведения мастер классов.</p>
+  <div class="scroll-cue">Листайте вниз ↓</div>
+</section>
 
-            // ---------------- КОНФЕТЫ ----------------
-            { id: 7, category: 'candy', name: 'Гранат в шоколаде (№1)', desc: 'Набор из свежего граната в шоколаде, украшенного сусальным золотом, в наборе 14 штук, цена - 2300₽', count: '14 штук', price: 2300, img: 'конфеты 1.jpg' },
-            { id: 8, category: 'candy', name: 'Конфеты ручной работы (№2)', desc: 'Конфеты ручной работы из бельгийского шоколада Callebaut, начинка: натуральная дробленная фисташка, миндаль, фундук, бельгийская вафля, сублимированная малина, в наборе 9 штук, цена набора - 1550₽', count: '9 штук', price: 1550, img: 'конфеты 2.jpg' },
-            { id: 9, category: 'candy', name: 'Премиальный набор конфет (№3)', desc: 'Премиальный набор конфет ручной работы из бельгийского шоколада Callebaut, начинка: натуральная дробленная фисташка, миндаль, фундук, бельгийская вафля, сублимированная малина, в наборе 16 штук, цена набора - 4550₽', count: '16 штук', price: 4550, img: 'конфеты 3.jpg' },
+<section id="catalog">
+  <span class="kicker reveal">Каталог</span>
+  <h2 class="h2c reveal">Сладкий секрет Нового года</h2>
+  
+  <div class="filters reveal">
+    <button class="filter-btn active" data-filter="sets">Наборы</button>
+    <button class="filter-btn" data-filter="strawberry">Клубника</button>
+    <button class="filter-btn" data-filter="candies">Конфеты</button>
+    <button class="filter-btn" data-filter="dates">Финики</button>
+  </div>
 
-            // ---------------- ФИНИКИ ----------------
-            { id: 10, category: 'dates', name: 'Королевские финики', desc: 'Королевские финики в шоколаде с фундуком и миндалём внутри, в наборе 8 штук, цена 1650₽', count: '8 штук', price: 1650, img: 'королевские финники.jpg' }
-        ];
+  <div class="grid" id="grid" aria-live="polite"></div>
+</section>
 
-        const grid = document.getElementById('productGrid');
-        const modal = document.getElementById('orderModal');
-        const closeModal = document.getElementById('closeModal');
-        const modalItemName = document.getElementById('modalItemName');
+<section id="corporate">
+  <div class="corp-box">
+    <span class="kicker reveal">Для бизнеса</span>
+    <h2 class="h2c reveal">Корпоративным клиентам</h2>
+    <p class="sub reveal">Подготовим новогодние подарки для сотрудников, партнёров и клиентов. Поможем подобрать наборы и количество под вашу задачу.</p>
+    <div class="corp-grid reveal">
+      <div><b>Брендирование</b><p>Добавим фирменные элементы оформления по предварительному согласованию.</p></div>
+      <div><b>Подбор под бюджет</b><p>Подберём варианты с учётом бюджета, количества подарков и сроков.</p></div>
+      <div><b>Закрывающие документы</b><p>Подготовим договор, счёт и закрывающие документы для юридических лиц.</p></div>
+    </div>
+  </div>
+</section>
 
-        // Плейсхолдер-картинка (если файл не найден)
-        function placeholder(name) {
-            return `data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20style%3D%22background%3A%23eee%22%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20dominant-baseline%3D%22middle%22%20text-anchor%3D%22middle%22%20fill%3D%22%23c5a059%22%20font-family%3D%22serif%22%20font-size%3D%2216px%22%3E${encodeURIComponent(name)}%3C%2Ftext%3E%3C%2Fsvg%3E`;
-        }
+<section id="contacts" class="cta">
+  <div class="stack">
+    <div class="corp-box">
+      <span class="kicker reveal">Контакты</span>
+      <h2 class="h2c reveal">Связаться с нами и сделать заказ</h2>
+      <p class="sub reveal" style="margin-bottom:34px">Авторские шоколадные наборы.</p>
+      <div class="chips reveal">
+        <a class="chip" data-l="phone"><i data-ic="phone"></i>+7 (951) 501-05-09</a>
+        <a class="chip" data-l="tg" target="_blank" rel="noopener"><i data-ic="tg"></i>Telegram</a>
+        <a class="chip" data-l="wa" target="_blank" rel="noopener"><i data-ic="wa"></i>WhatsApp</a>
+        <a class="chip" data-l="ig" target="_blank" rel="noopener"><i data-ic="ig"></i>Instagram</a>
+      </div>
+      <p class="hours reveal" style="margin-top:34px">Ежедневно с 10:00 до 23:00</p>
+    </div>
+    <div class="corp-box">
+      <span class="kicker reveal">Сервис</span>
+      <h2 class="h2c reveal">Условия заказа и сервис</h2>
+      <div class="corp-grid reveal" style="margin-top:34px">
+        <div><b>Самовывоз</b><p>Уточняйте адрес при заказе у менеджера</p></div>
+        <div><b>Доставка</b><p>Курьер по городу (Яндекс), отправка по РФ через СДЭК и Ozon</p></div>
+        <div><b>Персонализация</b><p>Брендированные ленты, открытки и наклейки под ваш запрос</p></div>
+        <div><b>Сроки и опт</b><p>Стандартный предзаказ за 5 дней. Индивидуальные условия для корпоративных клиентов.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        function renderProducts(category) {
-            grid.innerHTML = '';
-            const filtered = products.filter(p => p.category === category);
+<footer>Premium Chocolate · Новогодняя коллекция 2026 · Москва</footer>
 
-            filtered.forEach(product => {
-                // Галерея: images[] или одиночный img
-                const images = (product.images && product.images.length)
-                    ? product.images
-                    : [product.img || ''];
-                const mainImg = images[0];
+<script>
+var LINKS = {
+  bot:   'https://t.me/Premium_chocolate_13',
+  tg:    'https://t.me/Premium_chocolate_13',
+  wa:    'https://wa.me/79515010509?text=Здравствуйте!%20Хочу%20заказать%20набор',
+  phone: 'tel:+79515010509',
+  ig:    'https://www.instagram.com/k_moscow_13?lqvp=bWkybGR4Znk1MzZ6',
+  vk:    '',
+  mail:  ''
+};
+var ORDER_URL = LINKS.bot || LINKS.tg || LINKS.wa;
 
-                const thumbsHTML = images.length > 1
-                    ? `<div class="thumbnails">
-                          ${images.map((im, i) => `
-                              <img src="${im}" alt=""
-                                   class="thumb ${i === 0 ? 'active' : ''}"
-                                   data-src="${im}"
-                                   onerror="this.style.display='none'">
-                          `).join('')}
-                       </div>`
-                    : '';
+const products = [
+  {
+    category: "sets",
+    title: "Шоколадная ёлочка (Набор №1)",
+    desc: "Шоколадная ёлочка из молочного бельгийского шоколада с нежной сливочной карамелью с блочными игрушками из молочного шоколада с начинкой натурального мандарина.",
+    size: "Набор",
+    price: "2550 ₽",
+    mainImg: "Набор 1-1.jpg",
+    thumbs: ["Набор 1-1.jpg", "Набор 1-2.jpg"]
+  },
+  {
+    category: "sets",
+    title: "Шоколадная ёлочка (Набор №2)",
+    desc: "Шоколадная ёлочка из молочного бельгийского шоколада с нежной сливочной карамелью с блочными игрушками из молочного шоколада с начинкой ванили.",
+    size: "Набор",
+    price: "2550 ₽",
+    mainImg: "Набор 2-1.jpg",
+    thumbs: ["Набор 2-1.jpg", "Набор 2-2.jpg", "Набор 2-3.jpg", "Набор 2-4.jpg", "Набор 2-5.jpg", "Набор 2-6.jpg"]
+  },
+  {
+    category: "sets",
+    title: "Шоколадная ёлочка (Набор №3)",
+    desc: "Шоколадная ёлочка из молочного бельгийского шоколада.",
+    size: "Набор",
+    price: "5500 ₽",
+    mainImg: "Набор 3-1.jpg",
+    thumbs: ["Набор 3-1.jpg", "Набор 3-2.jpg", "Набор 3-3.jpg", "Набор 3-4.jpg", "Набор 3-5.jpg", "Набор 3-6.jpg"]
+  },
+  {
+    category: "sets",
+    title: "Набор «Зимняя сказка» (№4)",
+    desc: "Шоколадный набор «Зимняя сказка» из молочного бельгийского шоколада.",
+    size: "Набор",
+    price: "1550 ₽",
+    mainImg: "Набор 4-1.jpg",
+    thumbs: ["Набор 4-1.jpg", "Набор 4-2.jpg", "Набор 4-3.jpg", "Набор 4-4.jpg", "Набор 4-5.jpg", "Набор 4-6.jpg", "Набор 4-7.jpg"]
+  },
+  {
+    category: "sets",
+    title: "Шоколадные орешки (Набор №5)",
+    desc: "Набор из шоколадных орешков из молочного бельгийского шоколада с начинкой взбитой нуги и грецким орехом.",
+    size: "Набор",
+    price: "1550 ₽",
+    mainImg: "Набор 5-1.jpg",
+    thumbs: ["Набор 5-1.jpg", "Набор 5-2.jpg", "Набор 5-3.jpg", "Набор 5-4.jpg", "Набор 5-5.jpg", "Набор 5-6.jpg"]
+  },
+  {
+    category: "sets",
+    title: "Плитка «Счастливого Рождества» (№6)",
+    desc: "Шоколадная плитка «Счастливого Рождества» из молочного или тёмного бельгийского шоколада.",
+    size: "Плитка",
+    price: "1550 ₽",
+    mainImg: "Набор 6-1.jpg",
+    thumbs: ["Набор 6-1.jpg", "Набор 6-2.jpg"]
+  },
+  {
+    category: "sets",
+    title: "Плитка «С Новым годом» (№7)",
+    desc: "Шоколадная плитка «С Новым годом» из молочного бельгийского шоколада.",
+    size: "Плитка",
+    price: "1550 ₽",
+    mainImg: "Набор 7-1.jpg",
+    thumbs: ["Набор 7-1.jpg", "Набор 7-2.jpg"]
+  },
+  {
+    category: "sets",
+    title: "Шоколадный набор (№8)",
+    desc: "Шоколадный набор из молочного бельгийского шоколада.",
+    size: "Набор",
+    price: "650 ₽",
+    mainImg: "Набор 8-1.jpg",
+    thumbs: ["Набор 8-1.jpg", "Набор 8-2.jpg", "Набор 8-3.jpg", "Набор 8-4.jpg"]
+  },
+  {
+    category: "sets",
+    title: "Шоколадный набор (№9)",
+    desc: "Шоколадный набор из молочного бельгийского шоколада.",
+    size: "Набор",
+    price: "650 ₽",
+    mainImg: "Набор 9-1.jpg",
+    thumbs: ["Набор 9-1.jpg", "Набор 9-2.jpg", "Набор 9-3.jpg", "Набор 9-4.jpg"]
+  },
+  {
+    category: "sets",
+    title: "Шоколадный набор (№10)",
+    desc: "Шоколадный набор из молочного бельгийского шоколада.",
+    size: "Набор",
+    price: "650 ₽",
+    mainImg: "Набор 10-1.jpg",
+    thumbs: ["Набор 10-1.jpg", "Набор 10-2.jpg", "Набор 10-3.jpg", "Набор 10-4.jpg"]
+  },
+  {
+    category: "sets",
+    title: "Шоколадный набор (№11)",
+    desc: "Шоколадный набор из молочного бельгийского шоколада.",
+    size: "Набор",
+    price: "650 ₽",
+    mainImg: "Набор 11-1.jpg",
+    thumbs: ["Набор 11-1.jpg", "Набор 11-2.jpg", "Набор 11-3.jpg", "Набор 11-4.jpg", "Набор 11-5.jpg"]
+  },
+  {
+    category: "sets",
+    title: "Набор шоколадных орешков (№12)",
+    desc: "Набор шоколадных орешков из молочного бельгийского шоколада.",
+    size: "Набор",
+    price: "1350 ₽",
+    mainImg: "Набор 12-1.jpg",
+    thumbs: ["Набор 12-1.jpg", "Набор 12-2.jpg"]
+  },
+  {
+    category: "strawberry",
+    title: "Набор классический (№1)",
+    desc: "Набор классический из клубники в шоколаде, украшенный сусальным золотом, в наборе 16 штук, цена - 3999₽",
+    size: "16 штук (4х4)",
+    price: "3999 ₽",
+    mainImg: "клубника 1.jpg",
+    thumbs: ["клубника 1.jpg", "клубника 2.jpg", "клубника 3.jpg", "клубника 4.jpg", "клубника 5.jpg"]
+  },
+  {
+    category: "strawberry",
+    title: "Премиальный набор (№2)",
+    desc: "Премиальный набор клубники в шоколаде, в наборе 24 штуки, украшенный голубикой и красной смородиной в сусальном золоте, цена - 7500₽",
+    size: "24 штуки",
+    price: "7500 ₽",
+    mainImg: "клубника 2.jpg",
+    thumbs: ["клубника 1.jpg", "клубника 2.jpg", "клубника 3.jpg", "клубника 4.jpg", "клубника 5.jpg"]
+  },
+  {
+    category: "strawberry",
+    title: "Набор классический (№3)",
+    desc: "Набор классический из клубники в шоколаде, украшенный сусальным золотом, в наборе 16 штук, цена - 3999₽",
+    size: "16 штук",
+    price: "3999 ₽",
+    mainImg: "клубника 3.jpg",
+    thumbs: ["клубника 1.jpg", "клубника 2.jpg", "клубника 3.jpg", "клубника 4.jpg", "клубника 5.jpg"]
+  },
+  {
+    category: "strawberry",
+    title: "Набор с декором (№4)",
+    desc: "Набор клубники в шоколаде с декором, в наборе 16 штук, цена - 4500₽",
+    size: "16 штук",
+    price: "4500 ₽",
+    mainImg: "клубника 4.jpg",
+    thumbs: ["клубника 1.jpg", "клубника 2.jpg", "клубника 3.jpg", "клубника 4.jpg", "клубника 5.jpg"]
+  },
+  {
+    category: "strawberry",
+    title: "Набор классический (№5)",
+    desc: "Набор классический из клубники в шоколаде, украшенный сусальным золотом, в наборе 16 штук, цена - 3999₽",
+    size: "16 штук",
+    price: "3999 ₽",
+    mainImg: "клубника 5.jpg",
+    thumbs: ["клубника 1.jpg", "клубника 2.jpg", "клубника 3.jpg", "клубника 4.jpg", "клубника 5.jpg"]
+  },
+  {
+    category: "strawberry",
+    title: "Бенто торт из клубники",
+    desc: "Бенто торт из клубники в шоколаде, украшенный сусальным золотом, в наборе 27 штук, цена - 7500₽",
+    size: "27 штук",
+    price: "7500 ₽",
+    mainImg: "торт из клубники.jpg",
+    thumbs: ["торт из клубники.jpg"]
+  },
+  {
+    category: "candies",
+    title: "Гранат в шоколаде (№1)",
+    desc: "Набор из свежего граната в шоколаде, украшенного сусальным золотом, в наборе 14 штук, цена - 2300₽",
+    size: "14 штук",
+    price: "2300 ₽",
+    mainImg: "конфеты 1.jpg",
+    thumbs: ["конфеты 1.jpg", "конфеты 2.jpg", "конфеты 3.jpg"]
+  },
+  {
+    category: "candies",
+    title: "Конфеты ручной работы (№2)",
+    desc: "Конфеты ручной работы из бельгийского шоколада Callebaut, начинка натуральная арахисовая фисташка, миндаль, фундук, бельгийская вафля, сублимированная малина, в наборе 9 штук, цена - 1550₽",
+    size: "9 штук",
+    price: "1550 ₽",
+    mainImg: "конфеты 2.jpg",
+    thumbs: ["конфеты 1.jpg", "конфеты 2.jpg", "конфеты 3.jpg"]
+  },
+  {
+    category: "candies",
+    title: "Премиальный набор конфет (№3)",
+    desc: "Премиальный набор конфет ручной работы из бельгийского шоколада Callebaut, начинка натуральная арахисовая фисташка, миндаль, фундук, бельгийская вафля, сублимированная малина, в наборе 16 штук, цена - 4550₽",
+    size: "16 штук",
+    price: "4550 ₽",
+    mainImg: "конфеты 3.jpg",
+    thumbs: ["конфеты 1.jpg", "конфеты 2.jpg", "конфеты 3.jpg"]
+  },
+  {
+    category: "dates",
+    title: "Королевские финики",
+    desc: "Королевские финики в шоколаде с фундуком и миндалём внутри, в наборе 8 штук, цена 1650₽",
+    size: "8 штук",
+    price: "1650 ₽",
+    mainImg: "королевские финики.jpg",
+    thumbs: ["королевские финики.jpg"]
+  }
+];
 
-                const card = document.createElement('div');
-                card.className = 'product-card';
-                card.innerHTML = `
-                    <div class="img-wrapper">
-                        <img src="${mainImg}" alt="${product.name}" class="product-img"
-                             onerror="this.onerror=null;this.src='${placeholder(mainImg)}'">
-                    </div>
-                    ${thumbsHTML}
-                    <div class="product-info">
-                        <h3 class="product-title">${product.name}</h3>
-                        <p class="product-desc">${product.desc}</p>
-                        <div class="product-meta">
-                            <span class="product-count">${product.count}</span>
-                            <span class="product-price">${product.price} ₽</span>
-                        </div>
-                        <button class="order-btn" onclick="openModal('${product.name.replace(/'/g, "\\'")}')">Заказать</button>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
+var ICONS = {
+  ig:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5.2"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.1" cy="6.9" r="1.1" fill="currentColor" stroke="none"/></svg>',
+  tg:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>',
+  wa:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.7 7.5L3.5 20.5l1.4-4.3A8.5 8.5 0 1 1 20.5 11.6Z"/><path d="M9 8.4c.2-.5.4-.5.7-.5h.5c.2 0 .3.1.4.4l.6 1.4c.1.2 0 .4-.1.6l-.5.5c-.1.2-.2.3-.1.5.3.6 1.4 1.7 2.4 2.1.2.1.4.1.6-.1l.5-.6c.2-.2.3-.2.5-.1l1.4.7c.3.1.4.2.4.4 0 .6-.2 1.5-.9 1.8-.6.3-1.3.4-2.1.1-1.2-.4-2.5-1.2-3.5-2.3-.9-.9-1.6-2-1.9-2.8-.3-.8-.2-1.5.2-2.1Z" fill="currentColor" stroke="none"/></svg>',
+  phone:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M6.5 3.5h3l1.5 4-2 1.5a11 11 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z"/></svg>'
+};
+document.querySelectorAll('[data-ic]').forEach(function(el){
+  var n = el.getAttribute('data-ic');
+  if(ICONS[n]) el.innerHTML = ICONS[n];
+});
 
-            // Обработчики клика по миниатюрам
-            document.querySelectorAll('.thumb').forEach(thumb => {
-                thumb.addEventListener('click', function () {
-                    const card = this.closest('.product-card');
-                    const mainImageEl = card.querySelector('.product-img');
-                    mainImageEl.onerror = () => {
-                        mainImageEl.onerror = null;
-                        mainImageEl.src = placeholder(this.dataset.src);
-                    };
-                    mainImageEl.src = this.dataset.src;
-                    card.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
-                    this.classList.add('active');
-                });
-            });
+const catalog = document.getElementById('grid');
 
-            document.querySelector('.container').scrollIntoView({ behavior: 'smooth' });
-        }
+function renderCards(filter = 'sets') {
+  catalog.innerHTML = '';
+  const filtered = products.filter(p => p.category === filter);
 
-        document.querySelectorAll('.category-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
-                e.currentTarget.classList.add('active');
-                renderProducts(e.currentTarget.dataset.category);
-            });
-        });
+  filtered.forEach((product, index) => {
+    const card = document.createElement('div');
+    card.className = 'card reveal in';
 
-        window.openModal = function(itemName) {
-            modalItemName.textContent = itemName;
-            modal.style.display = 'flex';
-            setTimeout(() => {
-                modal.classList.add('active');
-            }, 10);
-        }
+    let thumbsHTML = '';
+    if (product.thumbs && product.thumbs.length > 0) {
+      product.thumbs.forEach((thumbSrc, i) => {
+        const activeClass = i === 0 ? 'active' : '';
+        thumbsHTML += `<div class="thumb ${activeClass}" onclick="changeImage(this, '${thumbSrc}')"><img src="${thumbSrc}" alt="фото"></div>`;
+      });
+    }
 
-        function hideModal() {
-            modal.classList.remove('active');
-            setTimeout(() => {
-                modal.style.display = 'none';
-            }, 300);
-        }
+    const orderUrl = `${ORDER_URL}`;
 
-        closeModal.onclick = hideModal;
-        window.onclick = (e) => {
-            if (e.target == modal) hideModal();
-        }
-    </script>
+    card.innerHTML = `
+      <div class="card-img-container">
+        <img src="${product.mainImg}" class="main-img" id="main-img-${index}" alt="${product.title}">
+      </div>
+      <div class="thumbs">${thumbsHTML}</div>
+      <div class="card-title">${product.title}</div>
+      <div class="card-desc">${product.desc}</div>
+      <div class="card-size">${product.size}</div>
+      <div class="card-price">${product.price}</div>
+      <a href="${orderUrl}" target="_blank" class="card-btn">Заказать</a>
+    `;
+    catalog.appendChild(card);
+  });
+}
+
+window.changeImage = function(thumbElement, newSrc) {
+  const card = thumbElement.closest('.card');
+  const mainImg = card.querySelector('.main-img');
+  mainImg.src = newSrc;
+  const thumbs = card.querySelectorAll('.thumb');
+  thumbs.forEach(t => t.classList.remove('active'));
+  thumbElement.classList.add('active');
+}
+
+const filterBtns = document.querySelectorAll('.filter-btn');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderCards(btn.dataset.filter);
+  });
+});
+
+renderCards('sets');
+
+document.querySelectorAll('[data-l]').forEach(function(el){
+  var key = el.getAttribute('data-l');
+  var url = LINKS[key];
+  if(!url){ el.hidden = true; return; }
+  el.setAttribute('href', url);
+  if(/^https?:/i.test(url)){
+    el.setAttribute('target', '_blank');
+    el.setAttribute('rel', 'noopener');
+  }
+});
+
+(function(){
+  var box = document.getElementById('stars');
+  if(!box) return;
+  var frag = document.createDocumentFragment();
+  for(var i = 0; i < 80; i++){
+    var s = document.createElement('span');
+    s.className = 'star';
+    var size = (Math.random() * 2 + 1).toFixed(1);
+    s.style.width = size + 'px';
+    s.style.height = size + 'px';
+    s.style.left = (Math.random() * 100).toFixed(2) + '%';
+    s.style.top = (Math.random() * 100).toFixed(2) + '%';
+    s.style.animationDelay = (Math.random() * 3).toFixed(2) + 's';
+    s.style.animationDuration = (2.2 + Math.random() * 3).toFixed(2) + 's';
+    frag.appendChild(s);
+  }
+  box.appendChild(frag);
+})();
+
+(function(){
+  var canvas = document.getElementById('snow');
+  if(!canvas || !canvas.getContext) return;
+  var ctx = canvas.getContext('2d');
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var dpr = Math.min(window.devicePixelRatio || 1, 2);
+  var W = 0, H = 0, flakes = [];
+
+  function make(n){
+    flakes = [];
+    for(var i = 0; i < n; i++){
+      flakes.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: 0.8 + Math.random() * 2.2,
+        vy: 0.25 + Math.random() * 0.8,
+        vx: -0.25 + Math.random() * 0.5,
+        a: 0.25 + Math.random() * 0.55,
+        p: Math.random() * Math.PI * 2
+      });
+    }
+  }
+
+  function resize(){
+    W = window.innerWidth;
+    H = window.innerHeight;
+    canvas.width = Math.round(W * dpr);
+    canvas.height = Math.round(H * dpr);
+    canvas.style.width = W + 'px';
+    canvas.style.height = H + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    make(Math.round(Math.min(140, W * H / 14000)));
+    if(reduce) drawOnce();
+  }
+
+  var last = 0;
+  function frame(t){
+    if(!last) last = t;
+    var dt = Math.min(t - last, 40) / 16.67;
+    last = t;
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = '#fff';
+    for(var i = 0; i < flakes.length; i++){
+      var f = flakes[i];
+      f.y += f.vy * dt;
+      f.x += (f.vx + Math.sin(f.p + t / 900) * 0.4) * dt;
+      f.p += 0.01;
+      if(f.y > H + 5){ f.y = -5; f.x = Math.random() * W; }
+      if(f.x > W + 5) f.x = -5;
+      if(f.x < -5) f.x = W + 5;
+      ctx.globalAlpha = f.a;
+      ctx.beginPath();
+      ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(frame);
+  }
+
+  function drawOnce(){
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = '#fff';
+    flakes.forEach(function(f){
+      ctx.globalAlpha = f.a;
+      ctx.beginPath();
+      ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+      ctx.fill();
+    });
+    ctx.globalAlpha = 1;
+  }
+
+  window.addEventListener('resize', resize, {passive:true});
+  resize();
+  if(!reduce) requestAnimationFrame(frame);
+})();
+
+(function(){
+  var dots = Array.prototype.slice.call(document.querySelectorAll('#dots a'));
+  if(!dots.length) return;
+  var sections = dots.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  var hdr = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--hdr'), 10) || 58;
+
+  function onScroll(){
+    var y = window.pageYOffset + hdr + 40;
+    var active = 0;
+    sections.forEach(function(s, i){
+      if(s && s.offsetTop <= y) active = i;
+    });
+    dots.forEach(function(d, i){ d.classList.toggle('on', i === active); });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll, {passive:true});
+  onScroll();
+})();
+
+(function(){
+  var els = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  if(!els.length) return;
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(el){ el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        en.target.classList.add('in');
+        io.unobserve(en.target);
+      }
+    });
+  }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script>
 </body>
 </html>
